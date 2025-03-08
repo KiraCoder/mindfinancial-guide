@@ -8,34 +8,34 @@ const About = () => {
   
   const team = [
     {
-      name: "Dr. Sarah Chen",
-      role: "Chief Mental Health Advisor",
-      bio: "With over 15 years of experience in clinical psychology, Dr. Chen specializes in cognitive behavioral therapy and stress management techniques.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-    },
-    {
-      name: "Michael Rodriguez, CFA",
-      role: "Head of Financial Advisory",
-      bio: "A certified financial analyst with expertise in investment strategies, retirement planning, and wealth management for individuals and families.",
+      name: "Rustam Azimov",
+      role: "Chief Executive Officer",
+      bio: "Secondary School Educator Specializing in ICT, STEM, and Entrepreneurship. Co-founder of CanToLearn. Bachelor of Science in Education (EduHK). Master of Education (HKU).",
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Emily Patel",
-      role: "Wellness Director",
-      bio: "Specializing in holistic approaches to mental wellness, Dr. Patel integrates mindfulness, positive psychology, and resilience training.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
-    },
-    {
-      name: "James Wilson, CFP",
-      role: "Financial Education Lead",
-      bio: "A certified financial planner focused on making complex financial concepts accessible and building financial literacy for all.",
+      name: "Sherzodbek Sadiev",
+      role: "Chief Financial Officer",
+      bio: "Penultimate Finance and Data Analytics student at Hong Kong Baptist University.",
       image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     },
     {
-      name: "Dr. Olivia Thompson",
-      role: "AI Ethics Specialist",
-      bio: "Working at the intersection of AI and mental health, Dr. Thompson ensures our advisory systems maintain the highest ethical standards.",
-      image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      name: "Adnan Muhammed",
+      role: "Chief Business Officer",
+      bio: "Project Manager at SALAM Community. Project Manager at CDF (EEL). Co-founder of CanToLearn. Co-founder of Bridge Impact. Director at All Asia Tech Solutions. Bachelor's in English Language Education (EdUHK).",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      name: "Nuraaly Toktanazar Uulu",
+      role: "Chief Technology Officer",
+      bio: "CEO & Co-Founder of LangCube, OnHire, and Jobutify. Bachelor of Science in Computer Science, City University of Hong Kong.",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+    },
+    {
+      name: "Argyn Myssanov",
+      role: "Chief Financial Officer",
+      bio: "HSBC Risk and Compliance Intern. Reinsurance Group of America Internal Audit Intern (Automation). 3rd Year Finance student at Hong Kong Baptist University.",
+      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
     }
   ];
 
@@ -85,7 +85,7 @@ const About = () => {
           <div className="text-center mb-12 animate-on-scroll">
             <h2 className="text-3xl font-bold tracking-tight mb-4">Meet Our Team</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Our expert team combines decades of experience in mental health and financial advisory to power our AI assistants.
+              Our team combines expertise in mental health, finance, education, and technology to build AI assistants that truly understand your needs.
             </p>
           </div>
           
