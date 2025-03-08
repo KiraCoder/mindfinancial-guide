@@ -1,6 +1,5 @@
 
 import { Link, useLocation } from 'react-router-dom';
-import { MessageSquare } from 'lucide-react';
 
 const Navbar = () => {
   const location = useLocation();
@@ -14,8 +13,12 @@ const Navbar = () => {
             to="/" 
             className="flex items-center space-x-2 text-foreground hover:opacity-80 transition-opacity"
           >
-            <MessageSquare className="w-8 h-8 text-primary" />
-            <span className="text-xl font-medium">ExpertChat</span>
+            <img 
+              src="/lovable-uploads/7848833e-f764-4a2e-8ff8-9c6a213e6aff.png" 
+              alt="GrowWise Logo" 
+              className="w-8 h-8" 
+            />
+            <span className="text-xl font-medium">GrowWise</span>
           </Link>
           
           <nav className="hidden md:flex items-center space-x-8">

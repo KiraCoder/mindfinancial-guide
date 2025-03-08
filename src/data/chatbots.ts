@@ -13,8 +13,8 @@ export interface Chatbot {
 export const chatbots: Chatbot[] = [
   {
     id: "financial-expert",
-    name: "FinGPT",
-    title: "Financial Expert",
+    name: "FinanceWise",
+    title: "Financial Advisor",
     description: "I can help you understand investments, budgeting, and financial planning to reach your monetary goals.",
     expertise: [
       "Investment strategies",
@@ -28,24 +28,8 @@ export const chatbots: Chatbot[] = [
     color: "from-blue-400 to-cyan-300"
   },
   {
-    id: "career-advisor",
-    name: "CareerGPT",
-    title: "Career Advisor",
-    description: "I can guide you through career decisions, resume building, and professional development opportunities.",
-    expertise: [
-      "Career transitions",
-      "Resume optimization",
-      "Job interview preparation",
-      "Skill development",
-      "Networking strategies"
-    ],
-    avatar: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    background: "I've been trained on career development resources, industry trends, and professional guidance to help you navigate your professional journey.",
-    color: "from-purple-400 to-indigo-300"
-  },
-  {
     id: "mental-health",
-    name: "MindGPT",
+    name: "MindWise",
     title: "Mental Health Advisor",
     description: "I can provide support, coping strategies, and resources for mental wellbeing and personal growth.",
     expertise: [
@@ -60,35 +44,51 @@ export const chatbots: Chatbot[] = [
     color: "from-green-400 to-emerald-300"
   },
   {
-    id: "fitness-coach",
-    name: "FitGPT",
-    title: "Fitness Coach",
-    description: "I can help you develop personalized fitness plans, nutrition advice, and wellness strategies.",
+    id: "financial-planner",
+    name: "WealthWise",
+    title: "Financial Planner",
+    description: "I specialize in long-term financial planning, wealth building, and securing your financial future.",
     expertise: [
-      "Workout programming",
-      "Nutrition planning",
-      "Recovery strategies",
-      "Habit formation",
-      "Health tracking"
+      "Wealth building",
+      "Estate planning",
+      "Investment portfolios",
+      "Financial independence",
+      "Risk management"
+    ],
+    avatar: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    background: "I've been trained on comprehensive financial planning strategies, wealth management principles, and long-term investment approaches.",
+    color: "from-purple-400 to-indigo-300"
+  },
+  {
+    id: "mental-wellness",
+    name: "WellnessWise",
+    title: "Mental Wellness Coach",
+    description: "I focus on holistic mental wellness, helping you build resilience and maintain emotional balance.",
+    expertise: [
+      "Resilience building",
+      "Emotional regulation",
+      "Stress reduction",
+      "Sleep improvement",
+      "Positive psychology"
     ],
     avatar: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    background: "I've been trained on exercise science, nutritional research, and behavioral psychology to help you achieve your fitness and wellness goals.",
+    background: "I've been trained on the latest research in positive psychology, resilience training, and holistic approaches to mental wellness.",
     color: "from-orange-400 to-amber-300"
   },
   {
-    id: "tech-advisor",
-    name: "TechGPT",
-    title: "Technology Advisor",
-    description: "I can provide guidance on technology decisions, digital transformation, and tech troubleshooting.",
+    id: "financial-education",
+    name: "EduWise",
+    title: "Financial Educator",
+    description: "I help you understand financial concepts and develop financial literacy for better decision-making.",
     expertise: [
-      "Digital transformation",
-      "Software recommendations",
-      "Tech troubleshooting",
-      "Digital privacy",
-      "Emerging technologies"
+      "Financial literacy",
+      "Market fundamentals",
+      "Economic principles",
+      "Personal finance basics",
+      "Financial terminology"
     ],
     avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
-    background: "I've been trained on technology trends, digital solutions, and technical documentation to provide clear and actionable technology advice.",
+    background: "I've been designed to break down complex financial concepts into easy-to-understand explanations, helping you build your financial knowledge.",
     color: "from-pink-400 to-rose-300"
   }
 ];

@@ -46,19 +46,13 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
     setTimeout(() => {
       let botResponse = '';
       
-      // Simple response logic based on chatbot type
-      if (chatbot.id === 'financial-expert') {
-        botResponse = "That's a great financial question. I'd be happy to provide some insights based on current best practices in personal finance.";
-      } else if (chatbot.id === 'career-advisor') {
-        botResponse = "Thanks for sharing your career concerns. I can help you navigate these challenges with strategic advice and practical steps.";
-      } else if (chatbot.id === 'mental-health') {
-        botResponse = "I appreciate you opening up about this. Remember that your feelings are valid, and there are effective strategies we can explore together.";
-      } else if (chatbot.id === 'fitness-coach') {
-        botResponse = "I understand your fitness goals. Let's develop a sustainable approach that aligns with your lifestyle and preferences.";
-      } else if (chatbot.id === 'tech-advisor') {
-        botResponse = "That's an interesting tech question. I can help you understand the options and make an informed decision based on your specific needs.";
+      // Response logic based on chatbot type
+      if (chatbot.id.includes('financial')) {
+        botResponse = "That's an important financial question. I understand that money matters can impact your overall wellbeing. Based on current financial best practices, I'd be happy to provide some insights that can help reduce financial stress and build greater security.";
+      } else if (chatbot.id.includes('mental')) {
+        botResponse = "Thank you for sharing that with me. Your mental wellbeing is important, and I appreciate your openness. I can suggest some evidence-based strategies that might help, while recognizing that everyone's journey is unique.";
       } else {
-        botResponse = "Thank you for your message. I'm here to help with any questions or concerns you might have.";
+        botResponse = "Thank you for your message. I'm here to support your mental and financial wellbeing with personalized guidance based on your specific situation.";
       }
       
       const botMessage: MessageProps = {
