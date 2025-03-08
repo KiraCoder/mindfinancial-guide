@@ -16,9 +16,9 @@ const Index = () => {
       <AnimatedBackground />
       <Navbar />
       
-      <main className="pt-28 pb-20">
+      <main className="py-48 pb-20">
         {/* Hero Section */}
-        <section className="w-full px-6 mx-auto max-w-7xl text-center mb-24">
+        <section className="w-full px-6 mx-auto max-w-7xl text-center mb-24 py-10">
           <div className="max-w-3xl mx-auto animate-on-scroll">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               <span className="relative">
@@ -131,7 +131,7 @@ const Index = () => {
         {/* School Subscription Plans - New Addition */}
         <section className="w-full px-6 mx-auto max-w-7xl mb-20">
           <div className="text-center mb-12 animate-on-scroll">
-            <h2 className="text-3xl font-bold tracking-tight mb-4">School Subscription Plans</h2>
+            <h2 className="text-3xl font-bold tracking-tight mb-4">Institution Subscription Plans</h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
               Empower your educational institution with AI-powered mental health and financial literacy resources.
             </p>
