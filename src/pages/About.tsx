@@ -11,31 +11,31 @@ const About = () => {
       name: "Rustam Azimov",
       role: "Chief Executive Officer",
       bio: "Secondary School Educator Specializing in ICT, STEM, and Entrepreneurship. Co-founder of CanToLearn. Bachelor of Science in Education (EduHK). Master of Education (HKU).",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.ibb.co/pBddQvH6/photo2.jpg"
     },
     {
       name: "Sherzodbek Sadiev",
       role: "Chief Financial Officer",
       bio: "Penultimate Finance and Data Analytics student at Hong Kong Baptist University.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.ibb.co/MkRHK0wZ/photo5.jpg"
     },
     {
       name: "Adnan Muhammed",
       role: "Chief Business Officer",
       bio: "Project Manager at SALAM Community. Project Manager at CDF (EEL). Co-founder of CanToLearn. Co-founder of Bridge Impact. Director at All Asia Tech Solutions. Bachelor's in English Language Education (EdUHK).",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.ibb.co/tp1XC1nv/photo1.jpg"
     },
     {
       name: "Nuraaly Toktanazar Uulu",
       role: "Chief Technology Officer",
       bio: "CEO & Co-Founder of LangCube, OnHire, and Jobutify. Bachelor of Science in Computer Science, City University of Hong Kong.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.ibb.co/27SQJBMx/photo3.jpg"
     },
     {
       name: "Argyn Myssanov",
       role: "Chief Financial Officer",
       bio: "HSBC Risk and Compliance Intern. Reinsurance Group of America Internal Audit Intern (Automation). 3rd Year Finance student at Hong Kong Baptist University.",
-      image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80"
+      image: "https://i.ibb.co/tPJnjXBk/photo4.png"
     }
   ];
 
@@ -92,7 +92,7 @@ const About = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, index) => (
               <div key={index} className="animate-on-scroll">
-                <div className="bg-card rounded-xl p-6 text-center shadow-md hover-lift transition-all duration-300 glass-card">
+                <div className="bg-card rounded-xl p-6 text-center shadow-md hover-lift transition-all duration-300 glass-card h-full flex flex-col">
                   <div className="w-28 h-28 mx-auto mb-4 rounded-full overflow-hidden border-4 border-primary/20">
                     <img 
                       src={member.image} 
@@ -102,7 +102,7 @@ const About = () => {
                   </div>
                   <h3 className="text-xl font-semibold mb-1">{member.name}</h3>
                   <p className="text-sm text-primary mb-3">{member.role}</p>
-                  <p className="text-sm text-card-foreground/80">{member.bio}</p>
+                  <p className="text-sm text-card-foreground/80 flex-grow">{member.bio}</p>
                 </div>
               </div>
             ))}
