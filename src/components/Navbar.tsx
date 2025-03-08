@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-      <div className={`w-full px-6 mx-auto content-transition ${isHomePage ? 'py-6' : 'py-4 backdrop-blur-xl bg-white/50 dark:bg-black/50 border-b border-border/40'}`}>
+      <div className={`w-full px-6 mx-auto content-transition ${isHomePage ? 'py-6 bg-white dark:bg-black/90 backdrop-blur-xl border-b border-border/40' : 'py-4 backdrop-blur-xl bg-white/50 dark:bg-black/50 border-b border-border/40'}`}>
         <div className="flex items-center justify-between">
           <Link 
             to="/" 
