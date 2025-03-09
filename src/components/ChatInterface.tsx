@@ -1,24 +1,37 @@
 
 import { useState, useRef, useEffect } from 'react';
 import { Send, Mic, Paperclip } from 'lucide-react';
+import { toast } from '@/components/ui/use-toast';
 import Message, { MessageProps } from './Message';
 import { Chatbot } from '../data/chatbots';
+import OpenAI from "openai";
+
+// Initialize OpenAI client
+const openai = new OpenAI({
+  apiKey: "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",
+  dangerouslyAllowBrowser: true, // Allow API key usage in browser
+});
 
 interface ChatInterfaceProps {
   chatbot: Chatbot;
 }
 
 const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
-  const [messages, setMessages] = useState<MessageProps[]>([
-    {
-      content: `Hi there! I'm ${chatbot.name}, your ${chatbot.title.toLowerCase()}. How can I help you today?`,
-      isUser: false,
-      timestamp: new Date()
-    }
-  ]);
+  const [messages, setMessages] = useState<MessageProps[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
+  
+  // Initialize conversation with welcome message
+  useEffect(() => {
+    setMessages([
+      {
+        content: `Hi there! I'm ${chatbot.name}, your ${chatbot.title.toLowerCase()}. How can I help you today?`,
+        isUser: false,
+        timestamp: new Date()
+      }
+    ]);
+  }, [chatbot]);
   
   const scrollToBottom = () => {
     messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
@@ -42,19 +55,39 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
     setInputValue('');
     setIsLoading(true);
     
-    // Simulate AI response
-    setTimeout(() => {
-      let botResponse = '';
+    try {
+      // Prepare conversation history for OpenAI
+      const conversationHistory = messages.map(msg => ({
+        role: msg.isUser ? "user" as const : "assistant" as const,
+        content: msg.content
+      }));
       
-      // Response logic based on chatbot type
-      if (chatbot.id.includes('financial')) {
-        botResponse = "That's an important financial question. I understand that money matters can impact your overall wellbeing. Based on current financial best practices, I'd be happy to provide some insights that can help reduce financial stress and build greater security.";
-      } else if (chatbot.id.includes('mental')) {
-        botResponse = "Thank you for sharing that with me. Your mental wellbeing is important, and I appreciate your openness. I can suggest some evidence-based strategies that might help, while recognizing that everyone's journey is unique.";
-      } else {
-        botResponse = "Thank you for your message. I'm here to support your mental and financial wellbeing with personalized guidance based on your specific situation.";
-      }
+      // Add system message with chatbot context
+      const systemMessage = {
+        role: "system" as const,
+        content: `You are ${chatbot.name}, a ${chatbot.title}. Your expertise includes: ${chatbot.expertise.join(', ')}. 
+        Background: ${chatbot.background}. 
+        When responding, maintain a supportive and informative tone. Provide practical advice related to your domain of expertise.`
+      };
       
+      // Add latest user message
+      conversationHistory.push({
+        role: "user" as const,
+        content: inputValue
+      });
+      
+      // Call OpenAI API
+      const completion = await openai.chat.completions.create({
+        model: "gpt-4o-mini",
+        messages: [systemMessage, ...conversationHistory],
+        temperature: 0.7,
+        max_tokens: 500,
+      });
+      
+      // Get AI response
+      const botResponse = completion.choices[0].message.content || "Sorry, I couldn't process that request.";
+      
+      // Add AI response to messages
       const botMessage: MessageProps = {
         content: botResponse,
         isUser: false,
@@ -62,8 +95,27 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
       };
       
       setMessages(prev => [...prev, botMessage]);
+    } catch (error) {
+      console.error('Error calling OpenAI API:', error);
+      
+      // Add error message
+      const errorMessage: MessageProps = {
+        content: "I'm having trouble connecting right now. Please try again in a moment.",
+        isUser: false,
+        timestamp: new Date()
+      };
+      
+      setMessages(prev => [...prev, errorMessage]);
+      
+      // Show toast notification
+      toast({
+        title: "Connection Error",
+        description: "Could not connect to AI service. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
       setIsLoading(false);
-    }, 1500);
+    }
   };
   
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
