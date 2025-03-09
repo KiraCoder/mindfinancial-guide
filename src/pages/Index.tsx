@@ -315,8 +315,8 @@ const Index = () => {
               <div className="bg-primary/10 p-6">
                 <h3 className="text-xl font-bold">Starter</h3>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold">$500</span>
-                  <span className="ml-2 text-sm text-muted-foreground">/month</span>
+                  <span className="text-3xl font-bold">100 HKD</span>
+                  <span className="ml-2 text-sm text-muted-foreground">/user month</span>
                 </div>
               </div>
               <div className="p-6">
@@ -365,8 +365,8 @@ const Index = () => {
               <div className="bg-primary p-6 text-white">
                 <h3 className="text-xl font-bold">Standard</h3>
                 <div className="mt-4 flex items-baseline">
-                  <span className="text-3xl font-bold">$1,000</span>
-                  <span className="ml-2 text-sm text-white/70">/month</span>
+                  <span className="text-3xl font-bold">129 HKD</span>
+                  <span className="ml-2 text-sm text-white/70">/user month</span>
                 </div>
               </div>
               <div className="p-6">
