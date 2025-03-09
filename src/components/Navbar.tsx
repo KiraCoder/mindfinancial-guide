@@ -7,7 +7,7 @@ const Navbar = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
-      <div className={`mx-auto content-transition py-4 backdrop-blur-xl bg-white/50 dark:bg-black/50 border-b border-border/40`}>
+      <div className="mx-auto content-transition py-4 bg-white dark:bg-black border-b border-border/40">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             to="/" 

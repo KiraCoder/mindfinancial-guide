@@ -47,7 +47,7 @@ export const chatbots: Chatbot[] = [
     id: "financial-planner",
     name: "WealthWise",
     title: "AI Financial Planner",
-    description: "I specialize in long-term financial planning, wealth-building strategies, and securing your financial future. Whether you’re planning for retirement, estate management, or financial independence, I offer data-driven insights to help you achieve your goals.",
+    description: "I specialize in long-term financial planning, wealth-building strategies, and securing your financial future. Whether you're planning for retirement, estate management, or financial independence, I offer data-driven insights to help you achieve your goals.",
     expertise: [
       "Wealth building",
       "Estate planning",
@@ -90,6 +90,22 @@ export const chatbots: Chatbot[] = [
     avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
     background: "I am designed to simplify financial concepts through interactive learning, case studies, and real-world applications. Trained on economic theories, financial textbooks, and market analysis, I help users enhance their financial literacy and decision-making skills.",
     color: "from-pink-400 to-rose-300"
+  },
+  {
+    id: "career-advisor",
+    name: "CareerWise",
+    title: "AI Career Development Advisor",
+    description: "I am an AI career advisor specializing in educational and professional development. Whether you're planning your academic journey, preparing for university applications, or exploring potential career paths, I provide personalized guidance for your future success.",
+    expertise: [
+      "Educational planning",
+      "University applications",
+      "Career exploration",
+      "Resume building",
+      "Interview preparation"
+    ],
+    avatar: "https://images.unsplash.com/photo-1541535650810-10d26f5c2ab3?ixlib=rb-1.2.1&auto=format&fit=crop&w=2850&q=80",
+    background: "I combine data on educational pathways, career trends, and industry requirements to help students make informed decisions about their future. My guidance is tailored to each student's interests, strengths, and goals, with special attention to educational opportunities in Hong Kong and globally.",
+    color: "from-teal-400 to-green-300"
   }
 ];
 
