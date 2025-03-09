@@ -4,11 +4,12 @@ import { Send, Mic, Paperclip } from 'lucide-react';
 import { toast } from '@/components/ui/use-toast';
 import Message, { MessageProps } from './Message';
 import { Chatbot } from '../data/chatbots';
-import OpenAI from "openai";
+import { OpenAI } from 'openai';
 
-// Initialize OpenAI client
+// Initialize OpenRouter client
 const openai = new OpenAI({
-  apiKey: "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",
+  apiKey: "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",
+  baseURL: "https://openrouter.ai/api/v1/",
   dangerouslyAllowBrowser: true, // Allow API key usage in browser
 });
 
@@ -56,18 +57,24 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
     setIsLoading(true);
     
     try {
-      // Prepare conversation history for OpenAI
+      // Prepare conversation history for API
       const conversationHistory = messages.map(msg => ({
         role: msg.isUser ? "user" as const : "assistant" as const,
         content: msg.content
       }));
       
-      // Add system message with chatbot context
+      // Add system message with GrowWise chatbot context
       const systemMessage = {
         role: "system" as const,
-        content: `You are ${chatbot.name}, a ${chatbot.title}. Your expertise includes: ${chatbot.expertise.join(', ')}. 
-        Background: ${chatbot.background}. 
-        When responding, maintain a supportive and informative tone. Provide practical advice related to your domain of expertise.`
+        content: `You are ${chatbot.name}, a ${chatbot.title} for GrowWise, an educational platform focused on improving financial literacy and mental health support for students.
+        
+        Your expertise includes: ${chatbot.expertise.join(', ')}. 
+        
+        Background: ${chatbot.background}
+        
+        As a GrowWise advisor, your goal is to provide personalized, practical advice to help students develop essential life skills. Offer specific, actionable recommendations rather than generic advice. When responding, maintain a supportive, empathetic tone while providing evidence-based information. Use relatable examples for young adults when possible.
+        
+        Important: If asked about sensitive topics beyond your expertise, acknowledge the importance of the issue and suggest speaking with a qualified professional.`
       };
       
       // Add latest user message
@@ -76,12 +83,15 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
         content: inputValue
       });
       
-      // Call OpenAI API
+      // Call OpenRouter API
       const completion = await openai.chat.completions.create({
-        model: "gpt-4o-mini",
+        model: "nousresearch/hermes-3-llama-3.1-405b", // High-quality open model
         messages: [systemMessage, ...conversationHistory],
         temperature: 0.7,
-        max_tokens: 500,
+        max_tokens: 800,
+        top_p: 1,
+        frequency_penalty: 0.2,
+        presence_penalty: 0.2,
       });
       
       // Get AI response
@@ -96,7 +106,7 @@ const ChatInterface = ({ chatbot }: ChatInterfaceProps) => {
       
       setMessages(prev => [...prev, botMessage]);
     } catch (error) {
-      console.error('Error calling OpenAI API:', error);
+      console.error('Error calling AI API:', error);
       
       // Add error message
       const errorMessage: MessageProps = {
